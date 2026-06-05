@@ -1,0 +1,41 @@
+name: Deploy Next.js to AWS EC2
+on:
+  push:
+    branches: [ main ]
+    paths: 
+    - 'web-statis/**'
+    - '.github/workflows/deploy.yml'
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Login to Docker Hub
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        push: true
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/UAS_2388010028:latest
+
+  deploy:
+    needs: build-and-deploy
+    runs-on: ubuntu-latest
+    name: Deploy to EC2 via SSH and run docker compose
+    steps:
+    - name: SSH and deploy
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.AWS_HOST }}
+        username: ${{ secrets.AWS_USERNAME }}
+        key: ${{ secrets.AWS_PRIVATE_KEY }}
+        port: 22
+        script: |
+          docker rm -f UAS_2388010028 || true
+          docker pull ${{ secrets.DOCKERHUB_USERNAME }}/UAS_2388010028:latest
+          docker run -d --name UAS_2388010028 -p 80:80 ${{ secrets.DOCKERHUB_USERNAME }}/UAS_2388010028:latest
