@@ -2201,11 +2201,8 @@ Web server running on port 80...</div>
         // Handle image errors gracefully
         function handleImageError(img) {
             console.log("Image load failed, attempting fallback:", img.src);
-            // If foto.png fails, try pto (1).png, then image.png
-            if (img.src.includes("foto.png")) {
-                img.src = "pto (1).png";
-                updateButtonActiveState("pto (1).png");
-            } else if (img.src.includes("pto (1).png")) {
+            // If pto (1).png fails, try image.png
+            if (img.src.includes("pto (1).png")) {
                 img.src = "image.png";
                 updateButtonActiveState("image.png");
             } else {
