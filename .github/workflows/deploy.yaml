@@ -4,7 +4,7 @@ on:
     branches: [ main ]
     paths: 
     - 'web-statis/**'
-    - '.github/workflows/deploy.yml'
+    - '.github/workflows/deploy.yaml'
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
