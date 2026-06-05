@@ -19,7 +19,7 @@ jobs:
     - name: Build and push Docker image
       uses: docker/build-push-action@v5
       with:
-        context: .
+        context: ./web-statis
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/uas_2388010028:latest
 
