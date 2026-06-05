@@ -1,4 +1,4 @@
-name: Deploy Next.js to AWS EC22
+name: Deploy Web Statis to AWS EC2
 on:
   push:
     branches: [ main ]
