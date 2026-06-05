@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muhammad Rafly Saputra - CV Informatika</title>
-    <meta name="description" content="CV & Portofolio Interaktif Muhammad Rafly Saputra - Mahasiswa Informatika UIN SSC">
-    
+    <meta name="description"
+        content="CV & Portofolio Interaktif Muhammad Rafly Saputra - Mahasiswa Informatika UIN SSC">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -22,17 +26,20 @@
             --bg-card-hover: rgba(20, 30, 58, 0.65);
             --border-color: rgba(255, 255, 255, 0.08);
             --border-glow: rgba(0, 242, 254, 0.25);
-            
-            --primary: #00f2fe; /* Electric Cyan */
+
+            --primary: #00f2fe;
+            /* Electric Cyan */
             --primary-rgb: 0, 242, 254;
-            --secondary: #d946ef; /* Neon Pink/Magenta */
+            --secondary: #d946ef;
+            /* Neon Pink/Magenta */
             --secondary-rgb: 217, 70, 239;
-            --accent: #4facfe; /* Deep Blue Accent */
-            
+            --accent: #4facfe;
+            /* Deep Blue Accent */
+
             --text-main: #f3f4f6;
             --text-muted: #9ca3af;
             --text-glow: rgba(0, 242, 254, 0.4);
-            
+
             --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             --font-main: 'Plus Jakarta Sans', 'Outfit', sans-serif;
             --font-mono: 'JetBrains Mono', monospace;
@@ -44,13 +51,13 @@
             --bg-card-hover: rgba(255, 255, 255, 0.95);
             --border-color: rgba(0, 0, 0, 0.08);
             --border-glow: rgba(0, 122, 255, 0.15);
-            
+
             --primary: #0066cc;
             --primary-rgb: 0, 102, 204;
             --secondary: #b5179e;
             --secondary-rgb: 181, 23, 158;
             --accent: #0077b6;
-            
+
             --text-main: #1f2937;
             --text-muted: #6b7280;
             --text-glow: rgba(0, 102, 204, 0.2);
@@ -69,7 +76,7 @@
             font-family: var(--font-main);
             overflow-x: hidden;
             transition: var(--transition-smooth);
-            background-image: 
+            background-image:
                 radial-gradient(circle at 10% 20%, rgba(var(--primary-rgb), 0.05) 0%, transparent 40%),
                 radial-gradient(circle at 90% 80%, rgba(var(--secondary-rgb), 0.05) 0%, transparent 40%);
             background-attachment: fixed;
@@ -93,7 +100,7 @@
             width: 300px;
             height: 300px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(var(--primary-rgb), 0.12) 0%, rgba(0,0,0,0) 70%);
+            background: radial-gradient(circle, rgba(var(--primary-rgb), 0.12) 0%, rgba(0, 0, 0, 0) 70%);
             filter: blur(50px);
             z-index: 0;
             pointer-events: none;
@@ -101,15 +108,23 @@
         }
 
         .orb-2 {
-            background: radial-gradient(circle, rgba(var(--secondary-rgb), 0.08) 0%, rgba(0,0,0,0) 70%);
+            background: radial-gradient(circle, rgba(var(--secondary-rgb), 0.08) 0%, rgba(0, 0, 0, 0) 70%);
             animation-duration: 25s;
             animation-delay: -5s;
         }
 
         @keyframes floatOrb {
-            0% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(100px, 80px) scale(1.2); }
-            100% { transform: translate(-50px, 150px) scale(0.9); }
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(100px, 80px) scale(1.2);
+            }
+
+            100% {
+                transform: translate(-50px, 150px) scale(0.9);
+            }
         }
 
         /* Container & Grid Layout */
@@ -182,7 +197,8 @@
             padding: 6px 0;
         }
 
-        .nav-links a:hover, .nav-links a.active {
+        .nav-links a:hover,
+        .nav-links a.active {
             color: var(--primary);
             text-shadow: 0 0 10px var(--text-glow);
         }
@@ -198,7 +214,8 @@
             transition: var(--transition-smooth);
         }
 
-        .nav-links a:hover::after, .nav-links a.active::after {
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
             width: 100%;
         }
 
@@ -208,7 +225,8 @@
             gap: 16px;
         }
 
-        .theme-toggle-btn, .print-btn {
+        .theme-toggle-btn,
+        .print-btn {
             background: none;
             border: 1px solid var(--border-color);
             color: var(--text-main);
@@ -223,7 +241,8 @@
             background-color: rgba(255, 255, 255, 0.02);
         }
 
-        .theme-toggle-btn:hover, .print-btn:hover {
+        .theme-toggle-btn:hover,
+        .print-btn:hover {
             border-color: var(--primary);
             color: var(--primary);
             box-shadow: 0 0 15px var(--border-glow);
@@ -274,8 +293,14 @@
         }
 
         @keyframes pulseGlow {
-            0% { box-shadow: 0 0 5px rgba(var(--primary-rgb), 0.1); }
-            100% { box-shadow: 0 0 15px rgba(var(--primary-rgb), 0.25); border-color: rgba(var(--primary-rgb), 0.5); }
+            0% {
+                box-shadow: 0 0 5px rgba(var(--primary-rgb), 0.1);
+            }
+
+            100% {
+                box-shadow: 0 0 15px rgba(var(--primary-rgb), 0.25);
+                border-color: rgba(var(--primary-rgb), 0.5);
+            }
         }
 
         .hero-title {
@@ -316,8 +341,15 @@
         }
 
         @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
         }
 
         .hero-desc {
@@ -498,7 +530,7 @@
             right: -20%;
             width: 140%;
             height: 140%;
-            background-image: 
+            background-image:
                 radial-gradient(var(--border-color) 1px, transparent 1px),
                 radial-gradient(var(--border-color) 1px, transparent 1px);
             background-size: 24px 24px;
@@ -659,9 +691,18 @@
             height: 12px;
             border-radius: 50%;
         }
-        .t-red { background-color: #ef4444; }
-        .t-yellow { background-color: #eab308; }
-        .t-green { background-color: #22c55e; }
+
+        .t-red {
+            background-color: #ef4444;
+        }
+
+        .t-yellow {
+            background-color: #eab308;
+        }
+
+        .t-green {
+            background-color: #22c55e;
+        }
 
         .terminal-title {
             font-size: 0.75rem;
@@ -763,7 +804,8 @@
             height: 100%;
             border-radius: 10px;
             background: linear-gradient(90deg, var(--primary), var(--secondary));
-            width: 0%; /* Animated on load via JS */
+            width: 0%;
+            /* Animated on load via JS */
             transition: width 1.5s cubic-bezier(0.1, 1, 0.1, 1);
             box-shadow: 0 0 10px rgba(var(--primary-rgb), 0.5);
         }
@@ -825,7 +867,8 @@
             transition: var(--transition-smooth);
         }
 
-        .filter-btn:hover, .filter-btn.active {
+        .filter-btn:hover,
+        .filter-btn.active {
             background: var(--primary);
             border-color: var(--primary);
             color: #000;
@@ -1220,7 +1263,8 @@
 
         @media (max-width: 768px) {
             .nav-links {
-                display: none; /* Can toggle with JS class */
+                display: none;
+                /* Can toggle with JS class */
             }
 
             .mobile-menu-btn {
@@ -1238,7 +1282,7 @@
                 border-bottom: 1px solid var(--border-color);
                 padding: 24px;
                 gap: 16px;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             }
 
             .form-row {
@@ -1255,10 +1299,22 @@
                 background-image: none !important;
             }
 
-            header, footer, #particles-canvas, .glowing-orb, .hero-grid-bg, 
-            .hero-cta, .img-toggle-controls, .theme-toggle-btn, .print-btn,
-            .mobile-menu-btn, .projects-filter, .project-links, .social-row, 
-            .contact-form, .soft-skills-container, section::after {
+            header,
+            footer,
+            #particles-canvas,
+            .glowing-orb,
+            .hero-grid-bg,
+            .hero-cta,
+            .img-toggle-controls,
+            .theme-toggle-btn,
+            .print-btn,
+            .mobile-menu-btn,
+            .projects-filter,
+            .project-links,
+            .social-row,
+            .contact-form,
+            .soft-skills-container,
+            section::after {
                 display: none !important;
             }
 
@@ -1436,6 +1492,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <!-- Particles Animation Background -->
@@ -1451,7 +1508,7 @@
             <a href="#" class="logo">
                 &lt;RAFLY<span>.dev/&gt;</span>
             </a>
-            
+
             <ul class="nav-links" id="nav-links">
                 <li><a href="#about" class="active">Tentang</a></li>
                 <li><a href="#skills">Keahlian</a></li>
@@ -1461,10 +1518,12 @@
             </ul>
 
             <div class="nav-actions">
-                <button class="theme-toggle-btn" id="theme-toggle" title="Ubah Tema" aria-label="Toggle Dark/Light Mode">
+                <button class="theme-toggle-btn" id="theme-toggle" title="Ubah Tema"
+                    aria-label="Toggle Dark/Light Mode">
                     <i class="fas fa-moon"></i>
                 </button>
-                <button class="print-btn" onclick="window.print()" title="Cetak CV / Simpan PDF" aria-label="Print/Save PDF">
+                <button class="print-btn" onclick="window.print()" title="Cetak CV / Simpan PDF"
+                    aria-label="Print/Save PDF">
                     <i class="fas fa-print"></i>
                 </button>
                 <button class="mobile-menu-btn" id="mobile-menu-btn" title="Menu" aria-label="Toggle Navigation Menu">
@@ -1475,11 +1534,11 @@
     </header>
 
     <div class="container">
-        
+
         <!-- Hero Section -->
         <section class="hero" id="hero">
             <div class="hero-grid-bg"></div>
-            
+
             <div class="hero-content">
                 <div class="hero-badge">
                     <i class="fas fa-code"></i> Informatics Student &bull; INF 6B
@@ -1492,7 +1551,9 @@
                     &lt;<span id="typewriter-text">Informatics Engineering</span><span class="cursor"></span>&gt;
                 </h2>
                 <p class="hero-desc">
-                    Mahasiswa Teknik Informatika UIN SSC (NPM: 2388010028) angkatan 2023 yang berdedikasi tinggi, berfokus pada rekayasa perangkat lunak dan pengembangan web inovatif. Gemar memecahkan masalah kompleks dan merancang solusi arsitektur aplikasi yang elegan.
+                    Mahasiswa Teknik Informatika UIN SSC (NPM: 2388010028) angkatan 2023 yang berdedikasi tinggi,
+                    berfokus pada rekayasa perangkat lunak dan pengembangan web inovatif. Gemar memecahkan masalah
+                    kompleks dan merancang solusi arsitektur aplikasi yang elegan.
                 </p>
                 <div class="hero-cta">
                     <a href="#contact" class="btn btn-primary">
@@ -1506,16 +1567,17 @@
 
             <div class="hero-image-container">
                 <div class="profile-card-wrapper" id="profile-card">
-                    <!-- Photo toggle button for safety (either pto (1).png or image.png) -->
+                    <!-- Photo toggle button for safety (either foto.png or pto (1).png) -->
                     <div class="img-toggle-controls">
-                        <button class="img-toggle-btn active" onclick="switchPhoto('pto (1).png', this)">Foto 1</button>
-                        <button class="img-toggle-btn" onclick="switchPhoto('image.png', this)">Foto 2</button>
+                        <button class="img-toggle-btn active" onclick="switchPhoto('foto.png', this)">Foto 1</button>
+                        <button class="img-toggle-btn" onclick="switchPhoto('pto (1).png', this)">Foto 2</button>
                     </div>
-                    
+
                     <div class="profile-card-inner">
                         <div class="profile-img-box">
-                            <!-- Using pto (1).png as default -->
-                            <img src="pto (1).png" alt="Muhammad Rafly Saputra" class="profile-img" id="profile-img-el" onerror="handleImageError(this)">
+                            <!-- Using foto.png as default -->
+                            <img src="pto (1).png" alt="Muhammad Rafly Saputra" class="profile-img" id="profile-img-el"
+                                onerror="handleImageError(this)">
                         </div>
                         <div class="profile-card-info">
                             <div class="profile-card-name">M. Rafly Saputra</div>
@@ -1532,14 +1594,20 @@
                 <span class="section-tag">profil singkat</span>
                 <h2 class="section-title">Tentang Saya</h2>
             </div>
-            
+
             <div class="about-grid">
                 <div class="glass-card">
                     <p class="bio-text">
-                        Saya adalah mahasiswa aktif program studi <span class="bio-highlight">Informatika UIN SSC (semester 6, kelas INF 6B)</span> dengan minat mendalam pada <span class="bio-highlight">Web Development & Database Systems</span>. Melalui studi akademik dan eksplorasi praktis, saya mempelajari bagaimana membangun aplikasi modern yang efisien, aman, dan mudah digunakan.
+                        Saya adalah mahasiswa aktif program studi <span class="bio-highlight">Informatika UIN SSC
+                            (semester 6, kelas INF 6B)</span> dengan minat mendalam pada <span class="bio-highlight">Web
+                            Development & Database Systems</span>. Melalui studi akademik dan eksplorasi praktis, saya
+                        mempelajari bagaimana membangun aplikasi modern yang efisien, aman, dan mudah digunakan.
                     </p>
                     <p class="bio-text">
-                        Saya menyukai tantangan teknis seperti mengoptimalkan query database, menulis kode yang modular, dan merancang antarmuka pengguna yang memukau. Baru-baru ini saya fokus menyempurnakan berbagai modul pada <span class="bio-highlight">Sistem Manajemen Kost</span>, termasuk menstabilkan transaksi dan validasi database untuk mencegah duplikasi pemesanan.
+                        Saya menyukai tantangan teknis seperti mengoptimalkan query database, menulis kode yang modular,
+                        dan merancang antarmuka pengguna yang memukau. Baru-baru ini saya fokus menyempurnakan berbagai
+                        modul pada <span class="bio-highlight">Sistem Manajemen Kost</span>, termasuk menstabilkan
+                        transaksi dan validasi database untuk mencegah duplikasi pemesanan.
                     </p>
 
                     <div class="details-list">
@@ -1574,25 +1642,28 @@
                     </div>
                     <div class="terminal-body" id="terminal-body">
                         <div class="terminal-line">
-                            <span class="t-prompt">PS D:\UAS_2388010028&gt;</span> <span class="t-cmd">cat .\info.json</span>
+                            <span class="t-prompt">PS D:\UAS_2388010028&gt;</span> <span class="t-cmd">cat
+                                .\info.json</span>
                             <div class="t-out">
-{
-  "name": "Muhammad Rafly Saputra",
-  "npm": "2388010028",
-  "major": "Informatika",
-  "class": "INF 6B",
-  "skills": ["Frontend", "Backend", "DevOps"],
-  "hobbies": ["Coding", "System Design"]
-}</div>
+                                {
+                                "name": "Muhammad Rafly Saputra",
+                                "npm": "2388010028",
+                                "major": "Informatika",
+                                "class": "INF 6B",
+                                "skills": ["Frontend", "Backend", "DevOps"],
+                                "hobbies": ["Coding", "System Design"]
+                                }</div>
                         </div>
                         <div class="terminal-line">
-                            <span class="t-prompt">PS D:\UAS_2388010028&gt;</span> <span class="t-cmd">node .\check-status.js</span>
+                            <span class="t-prompt">PS D:\UAS_2388010028&gt;</span> <span class="t-cmd">node
+                                .\check-status.js</span>
                             <div class="t-out t-out-success">
-Status: Ready to deploy &amp; collaborate! 🚀
-Web server running on port 80...</div>
+                                Status: Ready to deploy &amp; collaborate! 🚀
+                                Web server running on port 80...</div>
                         </div>
                         <div class="terminal-line">
-                            <span class="t-prompt">PS D:\UAS_2388010028&gt;</span> <span class="t-cmd"><span class="cursor" style="height:12px; width:6px;"></span></span>
+                            <span class="t-prompt">PS D:\UAS_2388010028&gt;</span> <span class="t-cmd"><span
+                                    class="cursor" style="height:12px; width:6px;"></span></span>
                         </div>
                     </div>
                 </div>
@@ -1762,13 +1833,17 @@ Web server running on port 80...</div>
                     <div class="project-meta">
                         <span class="project-tag">Fullstack &bull; Web App</span>
                         <div class="project-links">
-                            <a href="#" title="View Github Repository" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                            <a href="#" title="View Live Demo" aria-label="Demo"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" title="View Github Repository" aria-label="GitHub"><i
+                                    class="fab fa-github"></i></a>
+                            <a href="#" title="View Live Demo" aria-label="Demo"><i
+                                    class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
                     <h3 class="project-name">Kost Management System</h3>
                     <p class="project-description">
-                        Sistem manajemen kos-kosan digital untuk mengelola registrasi kamar, tagihan sewa bulanan, dan keluhan penghuni secara real-time. Dilengkapi dengan diagram statistik keuangan, penanganan transaksi sewa, serta pencegahan tabrakan pemesanan ganda (double-booking validation).
+                        Sistem manajemen kos-kosan digital untuk mengelola registrasi kamar, tagihan sewa bulanan, dan
+                        keluhan penghuni secara real-time. Dilengkapi dengan diagram statistik keuangan, penanganan
+                        transaksi sewa, serta pencegahan tabrakan pemesanan ganda (double-booking validation).
                     </p>
                     <div class="project-tech">
                         <span class="tech-badge">Node.js</span>
@@ -1784,13 +1859,17 @@ Web server running on port 80...</div>
                     <div class="project-meta">
                         <span class="project-tag">Frontend &bull; Portfolio</span>
                         <div class="project-links">
-                            <a href="#" title="View Github Repository" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                            <a href="#" title="View Live Demo" aria-label="Demo"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" title="View Github Repository" aria-label="GitHub"><i
+                                    class="fab fa-github"></i></a>
+                            <a href="#" title="View Live Demo" aria-label="Demo"><i
+                                    class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
                     <h3 class="project-name">CV &amp; Portofolio Digital Interaktif</h3>
                     <p class="project-description">
-                        Platform web statis responsif yang dibuat khusus untuk menampilkan keahlian, riwayat pendidikan, proyek, serta profile mahasiswa Informatika. Menggunakan arsitektur glassmorphic modern, visual particle canvas, mode gelap/terang, dan optimasi cetak PDF.
+                        Platform web statis responsif yang dibuat khusus untuk menampilkan keahlian, riwayat pendidikan,
+                        proyek, serta profile mahasiswa Informatika. Menggunakan arsitektur glassmorphic modern, visual
+                        particle canvas, mode gelap/terang, dan optimasi cetak PDF.
                     </p>
                     <div class="project-tech">
                         <span class="tech-badge">HTML5</span>
@@ -1805,13 +1884,17 @@ Web server running on port 80...</div>
                     <div class="project-meta">
                         <span class="project-tag">DevOps &bull; Containerization</span>
                         <div class="project-links">
-                            <a href="#" title="View Github Repository" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                            <a href="#" title="View Live Demo" aria-label="Demo"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" title="View Github Repository" aria-label="GitHub"><i
+                                    class="fab fa-github"></i></a>
+                            <a href="#" title="View Live Demo" aria-label="Demo"><i
+                                    class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
                     <h3 class="project-name">Dockerized Static App &amp; CI/CD</h3>
                     <p class="project-description">
-                        Dockerisasi website statis dengan web server Nginx Alpine untuk mengoptimalkan waktu render dan efisiensi resource. Diintegrasikan dengan alur kerja GitHub Actions (CI/CD) untuk otomatisasi build Docker Image dan deployment otomatis ke instance server AWS EC2.
+                        Dockerisasi website statis dengan web server Nginx Alpine untuk mengoptimalkan waktu render dan
+                        efisiensi resource. Diintegrasikan dengan alur kerja GitHub Actions (CI/CD) untuk otomatisasi
+                        build Docker Image dan deployment otomatis ke instance server AWS EC2.
                     </p>
                     <div class="project-tech">
                         <span class="tech-badge">Docker</span>
@@ -1837,7 +1920,10 @@ Web server running on port 80...</div>
                     <h3 class="timeline-title">S1 - Teknik Informatika</h3>
                     <div class="timeline-subtitle">Universitas Islam Negeri (UIN SSC)</div>
                     <p class="timeline-desc">
-                        Sebagai mahasiswa semester 6 di kelas INF 6B (NPM: 2388010028), saya mendalami teori ilmu komputer mendasar seperti Struktur Data, Teori Bahasa dan Otomata, Arsitektur Sistem Komputer, Pemrograman Web Lanjut, dan Rekayasa Perangkat Lunak. Mempertahankan rekam jejak akademik yang solid serta aktif berpartisipasi dalam proyek kelompok.
+                        Sebagai mahasiswa semester 6 di kelas INF 6B (NPM: 2388010028), saya mendalami teori ilmu
+                        komputer mendasar seperti Struktur Data, Teori Bahasa dan Otomata, Arsitektur Sistem Komputer,
+                        Pemrograman Web Lanjut, dan Rekayasa Perangkat Lunak. Mempertahankan rekam jejak akademik yang
+                        solid serta aktif berpartisipasi dalam proyek kelompok.
                     </p>
                 </div>
 
@@ -1847,7 +1933,8 @@ Web server running on port 80...</div>
                     <h3 class="timeline-title">Sekolah Menengah Atas (MIPA)</h3>
                     <div class="timeline-subtitle">Peminatan Matematika &amp; Ilmu Pengetahuan Alam</div>
                     <p class="timeline-desc">
-                        Mempelajari dasar-dasar pemecahan masalah kuantitatif, analisis logika, dan eksperimen ilmiah yang menumbuhkan ketertarikan saya pada dunia pemrograman komputer dan teknologi informasi.
+                        Mempelajari dasar-dasar pemecahan masalah kuantitatif, analisis logika, dan eksperimen ilmiah
+                        yang menumbuhkan ketertarikan saya pada dunia pemrograman komputer dan teknologi informasi.
                     </p>
                 </div>
             </div>
@@ -1869,7 +1956,8 @@ Web server running on port 80...</div>
                         </div>
                         <div>
                             <div class="contact-label">Email Mahasiswa</div>
-                            <a href="mailto:rafly.saputra@student.uin.ac.id" class="contact-val">rafly.saputra@student.uin.ac.id</a>
+                            <a href="mailto:rafly.saputra@student.uin.ac.id"
+                                class="contact-val">rafly.saputra@student.uin.ac.id</a>
                         </div>
                     </div>
 
@@ -1897,10 +1985,14 @@ Web server running on port 80...</div>
                     <div class="glass-card">
                         <div class="contact-label" style="margin-bottom: 12px;">Ikuti Sosial Media</div>
                         <div class="social-row">
-                            <a href="https://github.com/raflysaputra" target="_blank" class="social-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                            <a href="https://linkedin.com/in/raflysaputra" target="_blank" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="https://instagram.com/raflysaputra" target="_blank" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="https://twitter.com/raflysaputra" target="_blank" class="social-btn" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="https://github.com/raflysaputra" target="_blank" class="social-btn"
+                                aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://linkedin.com/in/raflysaputra" target="_blank" class="social-btn"
+                                aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://instagram.com/raflysaputra" target="_blank" class="social-btn"
+                                aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://twitter.com/raflysaputra" target="_blank" class="social-btn"
+                                aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                         </div>
                     </div>
                 </div>
@@ -1918,16 +2010,19 @@ Web server running on port 80...</div>
                             </div>
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input type="email" id="email" class="form-control" placeholder="alamat@email.com" required>
+                                <input type="email" id="email" class="form-control" placeholder="alamat@email.com"
+                                    required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="subject">Subjek</label>
-                            <input type="text" id="subject" class="form-control" placeholder="Topik Hubungan Kerja / Kerjasama" required>
+                            <input type="text" id="subject" class="form-control"
+                                placeholder="Topik Hubungan Kerja / Kerjasama" required>
                         </div>
                         <div class="form-group">
                             <label for="message">Pesan Anda</label>
-                            <textarea id="message" class="form-control" placeholder="Tulis detail pesan Anda di sini..." required></textarea>
+                            <textarea id="message" class="form-control" placeholder="Tulis detail pesan Anda di sini..."
+                                required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary" style="width: 100%;">
                             <i class="fas fa-paper-plane"></i> Kirim Pesan
@@ -2059,7 +2154,7 @@ Web server running on port 80...</div>
         window.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
             mouseY = e.clientY;
-            
+
             // Move Orbs slightly
             const orb1 = document.getElementById("orb-1");
             const orb2 = document.getElementById("orb-2");
@@ -2082,7 +2177,7 @@ Web server running on port 80...</div>
         themeToggleBtn.addEventListener("click", () => {
             document.body.classList.toggle("light-mode");
             isDarkMode = !isDarkMode;
-            
+
             const icon = themeToggleBtn.querySelector("i");
             if (isDarkMode) {
                 icon.className = "fas fa-moon";
@@ -2095,7 +2190,7 @@ Web server running on port 80...</div>
 
         function setupParticlesColor(dark) {
             particles.forEach(p => {
-                p.color = dark 
+                p.color = dark
                     ? (Math.random() > 0.5 ? 'rgba(0, 242, 254, 0.4)' : 'rgba(217, 70, 239, 0.3)')
                     : (Math.random() > 0.5 ? 'rgba(0, 102, 204, 0.3)' : 'rgba(181, 23, 158, 0.2)');
             });
@@ -2141,9 +2236,9 @@ Web server running on port 80...</div>
         function filterProjects(category) {
             const cards = document.querySelectorAll(".project-card");
             const filterBtns = document.querySelectorAll(".filter-btn");
-            
+
             filterBtns.forEach(btn => {
-                if (btn.innerText.toLowerCase() === category || 
+                if (btn.innerText.toLowerCase() === category ||
                     (category === 'all' && btn.innerText.toLowerCase() === 'semua') ||
                     (category === 'fullstack' && btn.innerText.toLowerCase() === 'fullstack') ||
                     (category === 'frontend' && btn.innerText.toLowerCase() === 'frontend') ||
@@ -2170,7 +2265,7 @@ Web server running on port 80...</div>
         function animateBars() {
             const skillsSection = document.getElementById("skills");
             if (!skillsSection) return;
-            
+
             const sectionPos = skillsSection.getBoundingClientRect().top;
             const screenPos = window.innerHeight / 1.2;
 
@@ -2190,7 +2285,7 @@ Web server running on port 80...</div>
             const imgEl = document.getElementById("profile-img-el");
             if (imgEl) {
                 imgEl.src = fileName;
-                
+
                 // Toggle active state class
                 const buttons = document.querySelectorAll(".img-toggle-btn");
                 buttons.forEach(b => b.classList.remove("active"));
@@ -2228,13 +2323,13 @@ Web server running on port 80...</div>
             const feedbackEl = document.getElementById("form-feedback");
             feedbackEl.className = "form-feedback success";
             feedbackEl.innerText = "Terima kasih! Pesan Anda telah disimulasikan terkirim. (Status: Sukses)";
-            
+
             // Clear form
             document.getElementById("contact-form").reset();
-            
+
             // Log for verification
             console.log("Contact form submitted successfully.");
-            
+
             // Fade feedback after 5 seconds
             setTimeout(() => {
                 feedbackEl.style.display = "none";
@@ -2247,10 +2342,11 @@ Web server running on port 80...</div>
             setupParticles();
             animateParticles();
             setTimeout(type, 1000);
-            
+
             // Check if skills is visible on load
             animateBars();
         });
     </script>
 </body>
+
 </html>
