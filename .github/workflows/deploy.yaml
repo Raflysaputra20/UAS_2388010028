@@ -1,4 +1,4 @@
-name: Deploy web-statis to AWS EC2
+name: Deploy web-statis to AWS E2
 on:
   push:
     branches: [ main ]
