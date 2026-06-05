@@ -470,7 +470,7 @@
             position: absolute;
             bottom: 85px;
             right: 15px;
-            z-index: 20;
+            z-index: 50;
             display: flex;
             gap: 6px;
             background: rgba(0, 0, 0, 0.6);
@@ -478,6 +478,8 @@
             padding: 4px;
             border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.1);
+            transform: translateZ(20px);
+            pointer-events: auto;
         }
 
         .img-toggle-btn {
@@ -1568,12 +1570,13 @@
             <div class="hero-image-container">
                 <div class="profile-card-wrapper" id="profile-card">
                     <!-- Photo toggle button for safety (either foto.png or pto (1).png) -->
-                    <div class="img-toggle-controls">
-                        <button class="img-toggle-btn active" onclick="switchPhoto('foto.png', this)">Foto 1</button>
-                        <button class="img-toggle-btn" onclick="switchPhoto('pto (1).png', this)">Foto 2</button>
-                    </div>
-
                     <div class="profile-card-inner">
+                        <!-- Photo toggle button for safety (either foto.png or pto (1).png) -->
+                        <div class="img-toggle-controls">
+                            <button class="img-toggle-btn" onclick="switchPhoto('foto.png', this)">Foto 1</button>
+                            <button class="img-toggle-btn active" onclick="switchPhoto('pto (1).png', this)">Foto 2</button>
+                        </div>
+
                         <div class="profile-img-box">
                             <!-- Using foto.png as default -->
                             <img src="pto (1).png" alt="Muhammad Rafly Saputra" class="profile-img" id="profile-img-el"
