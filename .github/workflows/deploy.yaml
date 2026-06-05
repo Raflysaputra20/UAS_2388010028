@@ -36,6 +36,6 @@ jobs:
         key: ${{ secrets.AWS_PRIVATE_KEY }}
         port: 22
         script: |
-          docker rm -f UAS_2388010028 || true
-          docker pull ${{ secrets.DOCKERHUB_USERNAME }}/uas_2388010028:latest
-          docker run -d --name UAS_2388010028 -p 80:80 ${{ secrets.DOCKERHUB_USERNAME }}/uas_2388010028:latest
+          sudo docker rm -f UAS_2388010028 || true
+          sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/uas_2388010028:latest
+          sudo docker run -d --name UAS_2388010028 -p 80:80 ${{ secrets.DOCKERHUB_USERNAME }}/uas_2388010028:latest
