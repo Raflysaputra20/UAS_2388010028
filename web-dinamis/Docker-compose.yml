@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  db-webdinamis:
+    image: mariadb:lts
+    container_name: mysql-db
+    environment:
+      MARIADB_ROOT_PASSWORD: password!123
+      MARIADB_DATABASE: uas_2388010028
+      MARIADB_USER: uas_2388010028
+      MARIADB_PASSWORD: 123456
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./db_data/uas_2388010028.sql:/docker-entrypoint-initdb.d/uas_2388010028.sql
+    restart: always
+
+  container-statis:
+    image: esbalokrafly/uas_2388010028:latest
+    container_name: compro-statis
+    ports:
+      - "80:80"
+    restart: always
+
+  container-dinamis:
+    image: esbalokrafly/web-dinamis:latest
+    container_name: compro-dinamis
+    ports:
+      - "3000:80"
+    restart: always
+    environment:
+      DB_HOST: db-webdinamis
+      DB_USER: uas_2388010028
+      DB_PASSWORD: 123456
+      DB_NAME: uas_2388010028
+    depends_on:
+      - db-webdinamis
+
+volumes:
+  db_data:

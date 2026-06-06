@@ -1,34 +1,46 @@
-name: Deploy web-statis to AWS EC22
+name: Deploy web-statis and web-dinamis to AWS EC2
+
 on:
   push:
     branches: [ main ]
     paths: 
     - 'web-statis/**'
+    - 'web-dinamis/**'
     - '.github/workflows/deploy.yaml'
+
 jobs:
-  build-and-deploy:
+  build-and-push:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+
     - name: Login to Docker Hub
       uses: docker/login-action@v3
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
-    - name: Build and push Docker image
+
+    - name: Build and push Static Web Image
       uses: docker/build-push-action@v5
       with:
         context: ./web-statis
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/uas_2388010028:latest
 
+    - name: Build and push Dynamic Web Image (PHP)
+      uses: docker/build-push-action@v5
+      with:
+        context: ./web-dinamis
+        push: true
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/web-dinamis:latest
+
   deploy:
-    needs: build-and-deploy
+    needs: build-and-push
     runs-on: ubuntu-latest
     name: Deploy to EC2 via SSH and run docker compose
     steps:
-    - name: SSH and deploy
+    - name: SSH and deploy with Docker Compose
       uses: appleboy/ssh-action@v1.0.3
       with:
         host: ${{ secrets.AWS_HOST }}
@@ -36,6 +48,86 @@ jobs:
         key: ${{ secrets.AWS_PRIVATE_KEY }}
         port: 22
         script: |
+          # 1. Clean up old standalone container if it exists
           sudo docker rm -f UAS_2388010028 || true
-          sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/uas_2388010028:latest
-          sudo docker run -d --name UAS_2388010028 -p 80:80 ${{ secrets.DOCKERHUB_USERNAME }}/uas_2388010028:latest
+          
+          # 2. Create project directories
+          mkdir -p ~/uas-app/db_data
+          
+          # 3. Write docker-compose.yml on the server
+          cat << 'EOF' > ~/uas-app/docker-compose.yml
+          version: '3.8'
+
+          services:
+            db-webdinamis:
+              image: mariadb:lts
+              container_name: mysql-db
+              environment:
+                MARIADB_ROOT_PASSWORD: password!123
+                MARIADB_DATABASE: uas_2388010028
+                MARIADB_USER: uas_2388010028
+                MARIADB_PASSWORD: 123456
+              volumes:
+                - db_data:/var/lib/mysql
+                - ./db_data/uas_2388010028.sql:/docker-entrypoint-initdb.d/uas_2388010028.sql
+              restart: always
+
+            container-statis:
+              image: ${{ secrets.DOCKERHUB_USERNAME }}/uas_2388010028:latest
+              container_name: compro-statis
+              ports:
+                - "80:80"
+              restart: always
+
+            container-dinamis:
+              image: ${{ secrets.DOCKERHUB_USERNAME }}/web-dinamis:latest
+              container_name: compro-dinamis
+              ports:
+                - "3000:80"
+              restart: always
+              environment:
+                DB_HOST: db-webdinamis
+                DB_USER: uas_2388010028
+                DB_PASSWORD: 123456
+                DB_NAME: uas_2388010028
+              depends_on:
+                - db-webdinamis
+
+          volumes:
+            db_data:
+          EOF
+
+          # 4. Write database initial schema dump on the server
+          cat << 'EOF' > ~/uas-app/db_data/uas_2388010028.sql
+          CREATE DATABASE IF NOT EXISTS uas_2388010028;
+          USE uas_2388010028;
+
+          DROP TABLE IF EXISTS transactions;
+
+          CREATE TABLE transactions (
+              id INT AUTO_INCREMENT PRIMARY KEY,
+              riot_id VARCHAR(50) NOT NULL,
+              vp_amount INT NOT NULL,
+              price INT NOT NULL,
+              payment_method VARCHAR(50) NOT NULL,
+              status VARCHAR(20) DEFAULT 'pending',
+              created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+          );
+
+          INSERT INTO transactions (riot_id, vp_amount, price, payment_method, status) VALUES
+          ('TenZ#NA1', 2400, 250000, 'Dana', 'success'),
+          ('Shroud#NA1', 8150, 800000, 'GoPay', 'success'),
+          ('f0resT#EU1', 625, 75000, 'OVO', 'pending');
+          EOF
+
+          # 5. Run docker compose
+          cd ~/uas-app
+          
+          # Try to pull latest images
+          sudo docker compose pull || sudo docker-compose pull
+          
+          # Stop and remove existing services
+          sudo docker compose down || sudo docker-compose down || true
+          
+          # Start services
+          sudo docker compose up -d || sudo docker-compose up -d
