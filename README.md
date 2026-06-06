@@ -12,6 +12,9 @@
 4. PUSH UNTUK DEPLOY
     - ![alt text](image-3.png)
 
+5. WEB STATIS (http://52.76.219.229/)
+    - ![alt text](image-8.png)
+
 ## WEB DINAMIS
 
 1. buat database nya
@@ -22,3 +25,6 @@
 
 3. deploy
     - ![alt text](image-7.png)
+
+4. WEB DINAMIS (http://52.76.219.229:3000/)
+    - ![alt text](image-9.png)
