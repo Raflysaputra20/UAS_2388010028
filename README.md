@@ -23,7 +23,7 @@ Dokumentasi ini dibuat untuk memenuhi seluruh Kriteria Penilaian (CPMK) tugas ak
 graph TD
     Dev[Developer / Mahasiswa] -->|Git Push to main| GitHub[GitHub Repository]
     
-    subgraph GitHub Actions Runner
+    subgraph "GitHub Actions Runner"
         GitHub --> Work[Workflow deploy.yaml]
         Work --> BuildStatis[Build Nginx Web Statis]
         Work --> BuildDinamis[Build PHP-Apache Web Dinamis]
@@ -34,7 +34,7 @@ graph TD
     
     Work -->|SSH Remote Execution| EC2[AWS EC2 Instance Host]
     
-    subgraph Docker Compose Orchestration (AWS EC2 VM)
+    subgraph "Docker Compose Orchestration (AWS EC2 VM)"
         EC2 -->|Pull Images| DockerHub
         EC2 --> Nginx[container-statis Nginx:alpine]
         EC2 --> PHP[container-dinamis PHP:8.2-apache]
@@ -155,6 +155,9 @@ Berikut adalah galeri bukti pengujian teknis yang memverifikasi keberhasilan dar
 * **Inisialisasi Virtual Machine AWS EC2**:
   Pembuatan VM Ubuntu Server 22.04 LTS baru di konsol AWS untuk bertindak sebagai server hosting aplikasi.
   ![AWS EC2 Instance](image.png)
+* **Konfigurasi AWS Security Group**:
+  Pengaturan aturan masuk (Inbound Rules) pada instans AWS EC2 untuk mengizinkan lalu lintas masuk pada port 22 (SSH), port 80 (HTTP Web Statis), dan port 3000 (HTTP Web Dinamis).
+  ![AWS Security Group](image-12.png)
 * **Instalasi Docker di Server Host VM**:
   Proses instalasi Docker Engine untuk mendukung eksekusi kontainer.
   ![Instalasi Docker](image-2.png)
