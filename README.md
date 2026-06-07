@@ -14,7 +14,7 @@ Dokumentasi ini dibuat untuk memenuhi seluruh Kriteria Penilaian (CPMK) tugas ak
 
 ### 🌐 Alur Arsitektur Deployment & CI/CD
 1. **Push Trigger**: Setiap kali Developer melakukan `push` ke branch `main`, pipeline GitHub Actions dijalankan secara otomatis.
-2. **Build & Push Images**: GitHub Runner login ke **Docker Hub** menggunakan token keamanan. Pipeline mengompilasi kode program menjadi dua Docker Image terpisah (`web-statis` dan `web-dinamis`), lalu mempublikasikannya ke repositori Docker Hub `esbalokrafly`.
+2. **Build & Push Images**: GitHub Runner login ke **Docker Hub** menggunakan token keamanan. Pipeline mengompilasi kode program menjadi dua Docker Image terpisah (`uas_2388010028_statis` dan `uas_2388010028_dinamis`), lalu mempublikasikannya ke repositori Docker Hub `esbalokrafly`.
 3. **Deploy via SSH**: Pipeline menghubungi instans **AWS EC2** tujuan menggunakan protokol SSH.
 4. **Orchestrate & Run**: Di dalam VM EC2, script deployment menulis file `docker-compose.yml` beserta skema inisialisasi database (`uas_2388010028.sql`), menarik image terbaru dari Docker Hub, lalu menjalankan seluruh service dalam mode background (`detached mode`).
 
@@ -71,14 +71,14 @@ services:
     restart: always
 
   container-statis:
-    image: esbalokrafly/uas_2388010028:latest
+    image: esbalokrafly/uas_2388010028_statis:latest
     container_name: compro-statis
     ports:
       - "80:80"
     restart: always
 
   container-dinamis:
-    image: esbalokrafly/web-dinamis:latest
+    image: esbalokrafly/uas_2388010028_dinamis:latest
     container_name: compro-dinamis
     ports:
       - "3000:80"

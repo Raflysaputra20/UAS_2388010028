@@ -15,14 +15,14 @@ services:
     restart: always
 
   container-statis:
-    image: esbalokrafly/uas_2388010028:latest
+    image: esbalokrafly/uas_2388010028_statis:latest
     container_name: compro-statis
     ports:
       - "80:80"
     restart: always
 
   container-dinamis:
-    image: esbalokrafly/web-dinamis:latest
+    image: esbalokrafly/uas_2388010028_dinamis:latest
     container_name: compro-dinamis
     ports:
       - "3000:80"

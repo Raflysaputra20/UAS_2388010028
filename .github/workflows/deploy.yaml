@@ -26,14 +26,14 @@ jobs:
       with:
         context: ./web-statis
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/uas_2388010028:latest
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/uas_2388010028_statis:latest
 
     - name: Build and push Dynamic Web Image (PHP)
       uses: docker/build-push-action@v5
       with:
         context: ./web-dinamis
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/web-dinamis:latest
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/uas_2388010028_dinamis:latest
 
   deploy:
     needs: build-and-push
@@ -73,14 +73,14 @@ jobs:
               restart: always
 
             container-statis:
-              image: ${{ secrets.DOCKERHUB_USERNAME }}/uas_2388010028:latest
+              image: ${{ secrets.DOCKERHUB_USERNAME }}/uas_2388010028_statis:latest
               container_name: compro-statis
               ports:
                 - "80:80"
               restart: always
 
             container-dinamis:
-              image: ${{ secrets.DOCKERHUB_USERNAME }}/web-dinamis:latest
+              image: ${{ secrets.DOCKERHUB_USERNAME }}/uas_2388010028_dinamis:latest
               container_name: compro-dinamis
               ports:
                 - "3000:80"
