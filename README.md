@@ -164,8 +164,8 @@ Berikut adalah galeri bukti pengujian teknis yang memverifikasi keberhasilan dar
   Pengaturan variabel environment sensitif (Host IP, SSH Private Key, Docker Token) secara terenkripsi pada repositori GitHub.
   ![GitHub Secrets](image-1.png)
 * **Registrasi Repositori Image di Docker Hub**:
-  Pembuatan repositori registry image kontainer untuk menampung image hasil build pipeline.
-  ![Docker Hub Repo](image-6.png)
+  Tampilan daftar repositori image di Docker Hub yang telah otomatis terbuat setelah push berhasil (`uas_2388010028_statis` dan `uas_2388010028_dinamis`).
+  ![Docker Hub Repo](image-10.png)
 
 ### 4. Pipeline CI/CD & Proses Deployment
 * **Eksekusi Sukses GitHub Actions Workflow (Push to Deploy)**:
@@ -174,6 +174,9 @@ Berikut adalah galeri bukti pengujian teknis yang memverifikasi keberhasilan dar
 * **Proses Deploy di VM (SSH & Docker Compose Run)**:
   Eksekusi penarikan image dan jalannya Docker Compose di server EC2 yang diorkestrasikan oleh script deploy.
   ![SSH Deploy](image-7.png)
+* **Verifikasi Kontainer yang Berjalan di VM (Docker PS)**:
+  Output perintah `sudo docker ps` pada terminal EC2, membuktikan ketiga kontainer (`compro-statis`, `compro-dinamis`, dan `mysql-db`) aktif menggunakan image baru dengan pemetaan port masing-masing.
+  ![Verifikasi Running Containers](image-11.png)
 
 ### 5. Verifikasi Database MariaDB
 * **Automasi Database Seeding**:
