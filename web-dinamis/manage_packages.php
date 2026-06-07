@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
+    header("Location: login.php");
+    exit;
+}
+
 require_once 'db.php';
 
 $message = '';
@@ -92,6 +98,7 @@ $packages_list = $conn->query("SELECT * FROM packages ORDER BY points ASC");
                 <li><a href="index.php">Beli</a></li>
                 <li><a href="history.php">Riwayat</a></li>
                 <li><a href="admin.php">Admin Panel</a></li>
+                <li><a href="logout.php" style="color: var(--color-primary);">Logout</a></li>
             </ul>
         </div>
     </nav>

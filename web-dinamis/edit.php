@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
+    header("Location: login.php");
+    exit;
+}
+
 require_once 'db.php';
 
 $message = '';
@@ -71,6 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                 <li><a href="index.php">Beli</a></li>
                 <li><a href="history.php">Riwayat</a></li>
                 <li><a href="admin.php">Admin Panel</a></li>
+                <li><a href="logout.php" style="color: var(--color-primary);">Logout</a></li>
             </ul>
         </div>
     </nav>
