@@ -149,7 +149,7 @@ Berikut adalah galeri bukti pengujian teknis yang memverifikasi keberhasilan dar
 ### 1. Struktur Workspace & Proyek di IDE
 * **Konfigurasi Workspace di Visual Studio Code (VS Code)**:
   Tampilan struktur direktori kerja proyek `UAS_2388010028` pada editor VS Code, memperlihatkan direktori `.github/workflows`, `web-statis`, `web-dinamis`, serta integrasi panel asisten AI.
-  ![Struktur Workspace VS Code](image-4.png)
+  ![Struktur Workspace VS Code](image-13.png)
 
 ### 2. Tahap Inisialisasi AWS EC2 & Instalasi Docker
 * **Inisialisasi Virtual Machine AWS EC2**:
@@ -193,3 +193,4 @@ Berikut adalah galeri bukti pengujian teknis yang memverifikasi keberhasilan dar
 * **Akses Web Dinamis (Port 3000)**:
   Aplikasi top-up Valorant Points berjalan lancar dan terhubung sukses ke database.
   ![Web Dinamis Port 3000](image-9.png)
+
