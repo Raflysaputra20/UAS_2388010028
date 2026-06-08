@@ -16,7 +16,7 @@ $packages_query = $conn->query("SELECT * FROM packages ORDER BY points ASC");
         <div class="container navbar-container">
             <a href="index.php" class="logo">
                 <span class="logo-icon"></span>
-                VALO<span>STORE</span>
+                VALO<span>STORE<span>Rafly</span></span>
             </a>
             <ul class="nav-links">
                 <li><a href="index.php">Beli</a></li>
